@@ -1,0 +1,391 @@
+html {
+    &.has-scroll-smooth {
+        overflow: hidden;
+    }
+
+    &.has-scroll-dragging {
+        user-select: none;
+    }
+  }
+
+  body {
+    .has-scroll-smooth & {
+        overflow: hidden;
+    }
+  }
+
+  [data-scroll-container] {
+    .has-scroll-smooth & {
+        min-height: 100vh;
+    }
+    [data-scroll-direction="horizontal"] & {
+        height: 100vh;
+        display: inline-block;
+        white-space: nowrap;
+    }
+  }
+
+  [data-scroll-section] {
+    [data-scroll-direction="horizontal"] & {
+        display: inline-block;
+        vertical-align: top;
+        white-space: nowrap;
+        height: 100%;
+    }
+  }
+
+  .c-scrollbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 11px;
+    height: 100%;
+    transform-origin: center right;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+    z-index: 9000;
+
+    &:hover {
+        transform: scaleX(1.45);
+    }
+
+    &:hover, .has-scroll-scrolling &, .has-scroll-dragging & {
+        opacity: 1;
+    }
+
+    [data-scroll-direction="horizontal"] & {
+        width: 100%;
+        height: 10px;
+        top: auto;
+        bottom: 0;
+        transform: scaleY(1);
+
+        &:hover {
+            transform: scaleY(1.3);
+        }
+    }
+
+  }
+
+  .c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $secondary;
+    opacity: 0;
+    width: 7px;
+    // border-radius: 10px;
+    margin: 2px;
+    cursor: grab;
+
+    .has-scroll-dragging & {
+        cursor: grabbing;
+    }
+
+    [data-scroll-direction="horizontal"] & {
+        right: auto;
+        bottom: 0;
+    }
+
+}
+
+.scroll-line {
+    width: 100%;
+    height: $headerLineHeight;
+    display: block;
+    position: fixed;
+    background-color: $secondary;
+    top: 0;
+    left: 0;
+    z-index: 9995;
+
+    &__back {
+        content: "";
+        width: 100%;
+        height: $headerLineHeight;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: lighten($five, 10%);
+        z-index: 0;
+    }
+}
+
+.scroll-markers {
+    width: 100%;
+    height: $headerLineHeight;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9996;
+
+    &__marker {
+        width: $headerLineHeight;
+        height: $headerLineHeight;
+        display: block;
+        position: fixed;
+        top: 0;
+        background-color: $secondary;
+    }
+}
+
+// Scroll Markers Front
+#scrollMarkerTop {
+    left: 31%;
+}
+
+#scrollMarkerFirst {
+    left: 44%;
+}
+
+#scrollMarkerSecond {
+    left: 57%;
+}
+
+#scrollMarkerThird {
+    left: 70%;
+}
+
+#scrollMarkerFour {
+    left: 50%;
+}
+
+// Scroll Markers Park
+#scrollMarkerPark_0 {
+    left: 5%;
+}
+
+#scrollMarkerPark_1 {
+    left: 12%;
+}
+
+#scrollMarkerPark_2 {
+    left: 21%;
+}
+
+#scrollMarkerPark_3 {
+    left: 30%;
+}
+
+#scrollMarkerPark_4 {
+    left: 38%;
+}
+
+#scrollMarkerPark_5 {
+    left: 47%;
+}
+
+#scrollMarkerPark_6 {
+    left: 56%;
+}
+
+#scrollMarkerPark_7 {
+    left: 64%;
+}
+
+#scrollMarkerPark_8 {
+    left: 73%;
+}
+
+#scrollMarkerPark_9 {
+    left: 82%;
+}
+
+#scrollMarkerPark_10 {
+    left: 91%;
+}
+
+#scrollMarkerPark_11 {
+    display: none;
+    visibility: hidden;
+}
+
+// Section Project Sample
+#scrollMarkerProjectSample_0 {
+    left: calc(5% - #{$headerLineHeight});
+}
+
+#scrollMarkerProjectSample_1 {
+    left: calc(12% - #{$headerLineHeight});
+}
+
+#scrollMarkerProjectSample_2 {
+    left: calc(19% - #{$headerLineHeight});
+}
+
+#scrollMarkerProjectSample_3 {
+    left: calc(26.6% - #{$headerLineHeight});
+}
+
+#scrollMarkerProjectSample_4 {
+    left: calc(35% - #{$headerLineHeight});
+}
+
+#scrollMarkerProjectSample_5 {
+    left: calc(43.5% - #{$headerLineHeight});
+}
+
+#scrollMarkerProjectSample_6 {
+    left: calc(51.7% - #{$headerLineHeight});
+}
+
+#scrollMarkerProjectSample_7 {
+    left: calc(60% - #{$headerLineHeight});
+}
+
+#scrollMarkerProjectSample_8 {
+    left: calc(68% - #{$headerLineHeight})
+}
+
+#scrollMarkerProjectSample_9 {
+    left: calc(76% - #{$headerLineHeight});
+}
+
+#scrollMarkerProjectSample_10 {
+    left: calc(84% - #{$headerLineHeight});
+}
+
+#scrollMarkerProjectSample_11 {
+    left: calc(92% - #{$headerLineHeight});
+}
+
+#scrollMarkerProjectSample_12 {
+    display: none;
+    visibility: hidden;
+}
+
+// Section Project
+#scrollMarkerProject_0 {
+    left: calc(5% - #{$headerLineHeight});
+}
+
+#scrollMarkerProject_1 {
+    left: calc(11% - #{$headerLineHeight});
+}
+
+#scrollMarkerProject_2 {
+    left: calc(18% - #{$headerLineHeight});
+}
+
+#scrollMarkerProject_3 {
+    left: calc(25% - #{$headerLineHeight});
+}
+
+#scrollMarkerProject_4 {
+    left: calc(33% - #{$headerLineHeight});
+}
+
+#scrollMarkerProject_5 {
+    left: calc(40% - #{$headerLineHeight});
+}
+
+#scrollMarkerProject_6 {
+    left: calc(47% - #{$headerLineHeight});
+}
+
+#scrollMarkerProject_7 {
+    left: calc(55% - #{$headerLineHeight});
+}
+
+#scrollMarkerProject_8 {
+    left: calc(63% - #{$headerLineHeight})
+}
+
+#scrollMarkerProject_9 {
+    left: calc(70% - #{$headerLineHeight});
+}
+
+#scrollMarkerProject_10 {
+    left: calc(77% - #{$headerLineHeight});
+}
+
+#scrollMarkerProject_11 {
+    left: calc(85% - #{$headerLineHeight});
+}
+
+#scrollMarkerProject_12 {
+    left: calc(92% - #{$headerLineHeight});
+}
+
+#scrollMarkerProject_13 {
+    display: none;
+    visibility: hidden;
+}
+
+// Section Engineering
+#scrollMarkerEngineering_0 {
+    left: calc(5% - #{$headerLineHeight});
+}
+
+#scrollMarkerEngineering_1 {
+    left: calc(12% - #{$headerLineHeight});
+}
+
+#scrollMarkerEngineering_2 {
+    left: calc(19% - #{$headerLineHeight});
+}
+
+#scrollMarkerEngineering_3 {
+    left: calc(26.6% - #{$headerLineHeight});
+}
+
+#scrollMarkerEngineering_4 {
+    left: calc(35% - #{$headerLineHeight});
+}
+
+#scrollMarkerEngineering_5 {
+    left: calc(43.5% - #{$headerLineHeight});
+}
+
+#scrollMarkerEngineering_6 {
+    left: calc(51.7% - #{$headerLineHeight});
+}
+
+#scrollMarkerEngineering_7 {
+    left: calc(60% - #{$headerLineHeight});
+}
+
+#scrollMarkerEngineering_8 {
+    left: calc(68% - #{$headerLineHeight})
+}
+
+#scrollMarkerEngineering_9 {
+    left: calc(76% - #{$headerLineHeight});
+}
+
+#scrollMarkerEngineering_10 {
+    left: calc(84% - #{$headerLineHeight});
+}
+
+#scrollMarkerEngineering_11 {
+    left: calc(92% - #{$headerLineHeight});
+}
+
+#scrollMarkerEngineering_12 {
+    display: none;
+    visibility: hidden;
+}
+
+// Section Stividor
+#scrollMarkerStividor_0 {
+    left: calc(11% - #{$headerLineHeight});
+}
+
+#scrollMarkerStividor_1 {
+    left: calc(33% - #{$headerLineHeight});
+}
+
+#scrollMarkerStividor_2 {
+    left: calc(55% - #{$headerLineHeight});
+}
+
+#scrollMarkerStividor_3 {
+    left: calc(78% - #{$headerLineHeight});
+}
+
+#scrollMarkerStividor_4 {
+    display: none;
+    visibility: hidden;
+}

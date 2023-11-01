@@ -1,0 +1,287 @@
+/*=========================================
+=                   Nav                   =
+=========================================*/
+
+.nav-main {
+	width: 100%;
+	height: $headerBottomHeight;
+	display: flex;
+	flex-direction: row-reverse;
+	position: relative;
+	top: 0;
+	right: 0;
+
+	&__menu {
+		// width: 100%;
+		height: $headerBottomHeight;
+		display: flex;
+		flex-direction: row;
+
+		li {
+			height: 100%;
+			display: block;
+			position: relative;
+
+			a {
+				width: auto;
+				height: $headerBottomHeight;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-family: $heading-font-light;
+				font-size: calc(#{$font-size-large} - 0.1rem);
+				color: $colorTextActive;
+				margin: 0 $padding;
+				position: relative;
+
+				&.submenu-open {
+					// background-color: $colorCategoryTitle;
+					// border-top: 0.15rem solid $filterBorderColor;
+
+					.sub-menu {
+
+
+						li {
+
+							a {
+								font-size: calc(#{$font-size-large} - 0.2rem);
+							}
+
+							// a.active {
+							//     //color: $fourth;
+							// }
+						}
+					}
+				}
+
+				&:after {
+					content: "";
+					width: 100%;
+					height: $border_normal;
+					display: none;
+					visibility: hidden;
+					background-color: $secondary;
+					position: absolute;
+					bottom: calc(#{$padding} / 1.5);
+				}
+			}
+
+			// &:last-child {
+			// 	padding-right: 0;
+			// }
+
+			&.active {
+
+				a {
+					//border-bottom: $border_normal solid $five;
+
+					&:after {
+						display: block;
+						visibility: visible;
+					}
+				}
+
+				.item-has-children {
+
+					a {
+						color: $colorTextHover;
+
+						&:after {
+							display: block;
+							visibility: visible;
+						}
+					}
+				}
+			}
+
+			 &:last-child {
+
+			 	a {
+			 		margin-right: 0;
+			 	}
+			 }
+
+			&:hover {
+
+				&.active {
+
+					a {
+						color: $colorTextHover;
+					}
+				}
+
+				a {
+					color: $colorTextHover;
+				}
+			}
+		}
+
+		.item-has-children {
+
+			> a {
+
+				svg#navCross {
+					width: 0.5rem;
+					height: 0.5rem;
+					display: block;
+					float: left;
+					position: relative;
+					margin-right: calc(#{$padding} / 5);
+					// transform: translateY(100%);
+
+					#navCrossVert {
+						fill: none;
+						stroke: $colorTextActive;
+						stroke-width: 0.2rem;
+						transform-origin: 50% 50%;
+						transition: transform .2s;
+					}
+
+					#navCrossHorz {
+						fill: none;
+						stroke: $colorTextActive;
+						stroke-width: 0.2rem;
+						transform-origin: 50% 50%;
+						transition: transform .2s;
+					}
+				}
+			}
+
+			ul.submenu {
+				min-width: $padding * 8;
+				position: absolute;
+				// top: $headerHeight / 2;
+				// margin-left: -$padding;
+				background-color: $fourth;
+				box-shadow: 0 0.1rem 0.1rem rgba($third, 0.2);
+				transition: all $base-duration;
+				display: none;
+				opacity: 0;
+				left: 0;
+				z-index: 9996;
+
+				li {
+					width: 100%;
+					// height: $headerHeight / 2;
+					display: flex;
+					align-items: center;
+					padding: 0;
+					position: relative;
+					cursor: pointer;
+					transition: all $base-duration;
+
+					ul.submenu {
+						transform: translateX(100%);
+					}
+
+					a {
+						width: max-content;
+						height: calc(#{$padding} * 3);
+						display: flex;
+						align-items: center;
+						justify-content: flex-end;
+						position: relative;
+						padding: 0 $padding 0 0;
+						color: $colorTextActive;
+						text-align: right;
+						line-height: 1.2;
+					}
+
+					&.active {
+						//background-color: $navLiBackgroundActive;
+
+						a {
+							color: $colorTextHover;
+
+							&:after {
+								display: none;
+								visibility: hidden;
+							}
+						}
+					}
+
+					&:hover {
+						//background-color: $navLiBackgroundActive;
+
+						a {
+							color: $colorTextHover;
+						}
+					}
+				}
+			}
+
+			&:hover {
+
+				ul.submenu {
+					display: block;
+					color: $fourth;
+					opacity: 1;
+				}
+
+				> a {
+
+					svg#navCross {
+
+						#navCrossVert {
+							stroke: $colorTextHover;
+							transform: rotate(90deg);
+						}
+
+						#navCrossHorz {
+							stroke: $colorTextHover;
+							transform: rotate(360deg);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__mobile {
+
+		li {
+			margin: $padding 0;
+			line-height: 1 !important;
+
+			a {
+				font-family: $heading-font;
+				font-size: $font-size-base;
+				text-transform: uppercase;
+				line-height: 1 !important;
+			}
+
+			&.active {
+
+				a {
+					color: $secondary;
+				}
+			}
+
+			&.item-has-children {
+				margin-bottom: $padding;
+
+				a {
+					color: $third;
+				}
+
+				.submenu {
+					margin-top: calc((-#{$padding}) / 2);
+
+					li {
+
+						a {
+							color: $primary;
+						}
+					}
+				}
+
+				&:last-child {
+					margin-top: $padding;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+/*============  End of Nav  =============*/

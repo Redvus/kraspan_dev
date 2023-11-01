@@ -1,0 +1,515 @@
+/*=============================================
+=                   Header                   =
+=============================================*/
+
+.header {
+	width: 100%;
+	height: $headerHeight;
+	position: fixed;
+	top: 0;
+	left: 0;
+	//padding-bottom: $padding;
+	background-color: $fourth;
+	z-index: 9990;
+
+	&--desktop {
+		display: block;
+		visibility: visible;
+	}
+
+	&--mobile {
+		display: none;
+		visibility: hidden;
+	}
+
+	&__wrapper {
+		@extend %wrapperWidth;
+		height: 100%;
+		display: block;
+		position: relative;
+		margin: 0 auto;
+	}
+
+	&__top {
+		width: 100%;
+		height: $headerTopHeight;
+		display: flex;
+		flex-direction: row;
+		position: relative;
+		background-color: $fourth;
+		overflow: hidden;
+
+		&__adress {
+			width: 16rem; //calc(100% - #{$headerMenuPadding})
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			align-items: flex-start;
+			justify-content: flex-start;
+			padding-left: calc(#{$padding} * 3.5); //$headerMenuPadding
+
+			li {
+				width: auto;
+				//height: $headerTopHeight;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				//margin: 0 0 0 $padding;
+				font-size: $font-size-small;
+				text-align: right;
+
+				i {
+					color: $third;
+					margin-right: calc(#{$padding} / 3);
+					font-size: $font-size-base;
+					line-height: calc(#{$font-size-base} + 0.4rem);
+				}
+
+				a {
+					width: auto;
+					display: block;
+					color: $primary;
+				}
+
+				svg {
+					width: auto;
+					height: $font-size-base;
+					display: block;
+
+					path {
+						fill: $third;
+					}
+				}
+
+				&:hover {
+
+					i, a {
+						color: $secondary;
+					}
+
+					svg {
+
+						path {
+							fill: $third;
+						}
+					}
+				}
+			}
+		}
+
+		&__banner {
+			height: 100%;
+			display: block;
+			z-index: 100;
+
+			video {
+				height: 100%;
+			}
+
+			picture {
+				width: 720px;
+				height: 90px;
+				display: block;
+
+				img {
+					width: 100%;
+					height: 100%;
+					display: block;
+					object-position: center;
+					object-fit: cover;
+				}
+			}
+		}
+
+		&_part {
+			width: calc((100% - (#{$headerInfoWidth}) - #{$headingPartPadding} - #{$padding}) / 2);
+			height: 100%;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			position: relative;
+			font-size: $font-size-small;
+
+			&--left {
+				padding-left: $headingPartPadding;
+
+				.header__top_adress {
+					margin-left: $padding;
+				}
+			}
+
+			&--right {
+				padding-right: $headingPartPadding;
+
+				.header__top_adress {
+					margin-right: $padding;
+
+					li {
+						justify-content: flex-end;
+						text-align: right;
+					}
+				}
+			}
+
+			picture {
+				width: 40%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				position: relative;
+
+				img {
+					width: 100%;
+					height: 50%;
+					display: block;
+					position: relative;
+					object-fit: contain;
+					object-position: center;
+					margin-top: calc(#{$padding} * 0.7);
+				}
+			}
+		}
+
+		&_adress {
+			width: calc(60% - (#{$padding} * 2));
+			height: 40%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			li {
+				width: 100%;
+				height: 40%;
+				display: flex;
+				align-items: center;
+
+				i {
+					color: $secondary;
+				}
+
+				a:hover {
+					color: $secondary;
+				}
+			}
+		}
+
+		&_info {
+			width: $headerInfoWidth;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			text-align: center;
+
+			i {
+				color: $secondary;
+			}
+
+			a:hover {
+				color: $secondary;
+			}
+		}
+	}
+
+	&__bottom {
+		width: 100%;
+		height: $headerBottomHeight;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		background-color: lighten($primary, 90%);
+
+		&_title {
+			color: $six;
+		}
+	}
+
+	&__logo {
+		width: $headerLogoWidth;
+		height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		position: relative;
+		background-color: $fourth;
+		left: 0;
+		top: 0;
+
+		a {
+			width: auto;
+			height: 100%;
+			display: block;
+
+			svg {
+				width: auto;
+				height: $headerBottomHeight;
+				display: block;
+			}
+		}
+
+		&--blue {
+			fill: $primary;
+		}
+
+		&--red {
+			fill: $secondary;
+		}
+	}
+
+	&__menu {
+		width: calc(100% - (#{$headerLogoWidth}) - #{$headerMenuPadding});
+		height: $headerBottomHeight;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		position: relative;
+		right: 0;
+		padding: 0 $headerMenuPadding 0 0;
+	}
+
+	/* Header Mobile
+	-------------------------------------------------- */
+
+	&-mobile {
+		width: 100%;
+		height: $headerMobileTopHeight;
+		position: fixed;
+		flex-direction: row;
+		top: 0;
+		left: 0;
+		background-color: $fourth;
+		//border-bottom: $border-normal solid $fourth;
+		display: none;
+		visibility: hidden;
+		z-index: 9997;
+
+		&__bottom {
+			width: 100%;
+			height: $headerMobileTopHeight;
+			position: fixed;
+			flex-direction: row;
+			bottom: 0;
+			left: 0;
+			background-color: $primary;
+			border-top: $border-normal solid $fourth;
+			display: none;
+			visibility: hidden;
+			z-index: 9997;
+		}
+
+		&__logo {
+			width: 50%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			svg {
+				width: auto;
+				height: 60%;
+				display: block;
+			}
+
+			&--red {
+				fill: $fourth;
+			}
+
+			&--black {
+				fill: $fourth;
+			}
+		}
+
+		&__nav {
+			width: calc(85% - (#{$padding} * 2));
+			height: calc(100vh - #{$headerMobileTopHeight} - (#{$padding} * 2));
+			position: fixed;
+			top: $headerMobileTopHeight;
+			right: 0;
+			background-color: $fourth;
+			padding: $padding;
+			//border-left: $border-normal solid $primary;
+			z-index: -1;
+			display: none;
+			visibility: hidden;
+			transform: translateX(100%);
+
+			&-mask {
+				width: 100%;
+				height: calc(100vh - #{$headerMobileTopHeight});
+				position: fixed;
+				top: $headerMobileTopHeight;
+				left: 0;
+				background-color: rgba($primary, 0.8);
+				z-index: -1;
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			&-button {
+				width: calc(50% / 3);
+				height: $headerMobileTopHeight;
+				display: none;
+				visibility: hidden;
+				align-items: center;
+				justify-content: center;
+				position: fixed;
+				top: 0;
+				right: 0;
+				cursor: pointer;
+				z-index: 9998;
+
+				// &:hover {
+
+				// 	.nav-button-line {
+
+				// 		&__top {
+				// 			transform: translate(30%, 200%) rotate(135deg) scaleX(0.6);
+				// 		}
+
+				// 		&__middle {
+				// 			transform: rotate(180deg);
+				// 		}
+
+				// 		&__bottom {
+				// 			transform: translate(30%, -200%) rotate(-135deg) scaleX(0.6);
+				// 		}
+				// 	}
+				// }
+			}
+
+			&-line {
+				width: calc(#{$headerMobileTopHeight} / 2);
+				height: $border_thin + 0.05;
+				background-color: $primary;
+				position: absolute;
+				// transition: transform 0.3s;
+
+				&__top {
+					transform: translate(0, -290%);
+					transform-origin: 50% 50%;
+				}
+
+				&__middle {
+					transform-origin: 50% 50%;
+				}
+
+				&__bottom {
+					transform: translate(0, 290%);
+					transform-origin: 50% 50%;
+				}
+			}
+		}
+
+		&__social {
+			width: calc((50% * 2) / 3);
+			height: 100%;
+			flex-direction: row;
+			display: none;
+			visibility: hidden;
+
+			li {
+				width: 50%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				i {
+					color: $primary;
+				}
+			}
+		}
+
+		&__phone {
+			width: calc(100% / 3);
+			height: 100%;
+			align-items: center;
+			justify-content: center;
+			display: none;
+			visibility: hidden;
+
+			i {
+				color: $fourth;
+			}
+		}
+
+		&__banner {
+			width: 100%;
+			display: none;
+			visibility: hidden;
+			position: fixed;
+			top: $headerMobileTopHeight;
+			z-index: 100;
+
+			video {
+				width: 100%;
+			}
+		}
+	}
+
+	/* End of Header Mobile
+	-------------------------------------------------- */
+
+	@include grid-media($Medium) {
+
+	}
+
+	@include grid-media($XSmall) {
+
+		&--mobile {
+			display: flex;
+			visibility: visible;
+		}
+
+		&--desktop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	@include grid-media($Small) {
+		display: none;
+		visibility: hidden;
+
+		&-mobile {
+
+			&__top,
+			&__bottom {
+				display: flex;
+				visibility: visible;
+			}
+
+			&__nav {
+				display: block;
+				visibility: visible;
+
+				&-mask {
+					display: block;
+					visibility: visible;
+				}
+
+				&-button {
+					display: flex;
+					visibility: visible;
+				}
+			}
+
+			&__social,
+			&__phone {
+				display: flex;
+				visibility: visible;
+			}
+
+			&__banner {
+				display: block;
+				visibility: visible;
+			}
+		}
+	}
+}
+
+/*============  End of Header  =============*/
