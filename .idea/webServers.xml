@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="09d6c9df-ac81-4929-9a8d-533460c157a5" name="Kraspan" url="https://kraspan.redvus.ru">
+        <fileTransfer rootFolder="/var/www/035_kraspan/html/assets" accessType="SFTP" host="176.57.215.214" port="22" sshConfigId="6ae31836-531f-4ec6-a93f-96b163bfee2c" sshConfig="redvus@176.57.215.214:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
