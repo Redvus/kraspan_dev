@@ -4,12 +4,16 @@
 
 .section {
 	width: 100%;
-	height: 30vh;
+	min-height: 30vh;
 	top: 0;
 	left: 0;
 	display: block;
 	position: relative;
 	z-index: 2;
+
+	&--padding {
+		padding: calc(#{$padding} * 2) 0;
+	}
 
 	&-wrapper {
 		@extend %wrapperWidth;
@@ -26,13 +30,21 @@
 	}
 
 	&__title {
-		display: inline-block;
-		margin-bottom: calc(#{$padding} * 3);
+		width: 100%;
+		height: $sectionTopInfoHeight;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		text-align: center;
+		padding: $padding 0;
+		//background-color: $fourth;
 
 		h2 {
-			font-size: calc(#{$font-size-base} + 1.5rem);
-			color: $third;
-			transition: color $base-duration;
+			//font-size: calc(#{$font-size-base} + 1.5rem);
+			color: $primary;
+			text-align: center;
+			//transition: color $base-duration;
 		}
 
 		a {
@@ -41,26 +53,6 @@
 
 				h2 {
 					color: darken($third, 5%);
-				}
-			}
-		}
-
-		&-tab {
-			margin-right: $padding;
-		}
-
-		&.active {
-
-			h2 {
-				color: $secondary;
-			}
-
-			a {
-				&:hover {
-
-					h2 {
-						color: $secondary;
-					}
 				}
 			}
 		}
@@ -114,7 +106,7 @@
 
 	&-top {
 		height: calc(100vh - #{$headerHeight});
-		top: $headerHeight;
+		margin-top: $headerHeight;
 
 		&__slider {
 			width: 100%;
@@ -136,6 +128,7 @@
 			height: calc(#{$sectionTopInfoHeight} * 2);
 			display: flex;
 			flex-direction: column;
+			position: absolute;
 			margin-top: calc(-#{$sectionTopInfoHeight} * 2);
 
 			&_title {
@@ -146,8 +139,8 @@
 				justify-content: center;
 				position: relative;
 				text-align: center;
-				//background-color: $fourth;
-				background-color: lighten($primary, 90%);
+				background-color: $fourth;
+				//background-color: $third;
 			}
 
 			&_counters {
@@ -158,8 +151,8 @@
 				align-items: center;
 				justify-content: center;
 				position: relative;
-				//background-color: lighten($primary, 90%);
-				background-color: $fourth;
+				background-color: $third;
+				//background-color: $fourth;
 
 				li {
 					width: calc(100% / 3);
@@ -400,6 +393,10 @@
 		//		}
 		//	}
 		//}
+	}
+
+	&--gray {
+		background-color: $third;
 	}
 
 	&__description {
@@ -1893,6 +1890,168 @@
 
 		@include grid-media($XSmall) {
 			margin-bottom: calc(#{$padding} * 2);
+		}
+	}
+
+	&__warning {
+		width: 100%;
+		height: calc(#{$sectionTopInfoHeight} * 1.5);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		text-align: center;
+		background-color: $fourth;
+
+		&_title {
+			color: $secondary;
+		}
+	}
+
+	&__list {
+		width: 100%;
+		display: block;
+		position: relative;
+
+		li {
+			@include rowMachine(4, $padding);
+			white-space: normal;
+			position: relative;
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: relative;
+				object-fit: cover;
+				z-index: 0;
+			}
+
+			p {
+				width: calc(100% - (#{$padding} * 2));
+				display: flex;
+				align-items: flex-start;
+				justify-content: center;
+				text-align: center;
+				padding: 0 $padding;
+			}
+		}
+
+		&_full {
+			width: 100%;
+			display: block;
+			position: relative;
+		}
+
+		&_info {
+			@include rowMachine(3, $padding);
+			overflow: hidden;
+			position: relative;
+			cursor: pointer;
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: relative;
+				object-fit: cover;
+				object-position: center;
+				z-index: 0;
+			}
+
+			&:hover {
+
+				.section__list_title {
+					opacity: 0;
+				}
+
+				.section__list_text {
+					opacity: 1;
+				}
+			}
+		}
+
+		&_title {
+			width: calc(100% - (#{$padding} * 2));
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			padding: 0 $padding;
+			top: 0;
+			left: 0;
+			background-color: rgba($primary, 0.3);
+			z-index: 1;
+			transition: opacity $base-duration;
+
+			h2, h3, h4 {
+				color: $fourth;
+				text-align: center;
+				text-shadow: $border_thin $border_thin $border_normal $primary;
+			}
+		}
+
+		&_text {
+			width: calc(100% - (#{$padding} * 2));
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			padding: 0 $padding;
+			top: 0;
+			left: 0;
+			background-color: rgba($primary, 0.3);
+			z-index: 2;
+			transition: opacity $base-duration;
+			opacity: 0;
+
+			h2, h3, h4 {
+				color: $fourth;
+				text-align: center;
+				text-shadow: $border_thin $border_thin $border_normal $primary;
+			}
+		}
+	}
+
+	&__link {
+
+
+		i {
+			font-size: $font-size-h2;
+			color: $secondary;
+		}
+
+		&:hover {
+
+			h3 {
+				color: $secondary;
+			}
+
+			i {
+				transform: translateX(15%);
+			}
+		}
+	}
+
+	&__text {
+		width: 100%;
+		display: flex;
+		position: relative;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: calc(#{$padding} * 2) 0;
+
+		&_inside {
+			width: 47%;
+			display: block;
+			position: relative;
+		}
+
+		&_block {
+			border-left: $border_bold solid $secondary;
+			padding-left: calc(#{$padding} * 2);
 		}
 	}
 }

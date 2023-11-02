@@ -7,6 +7,7 @@
 </head>
 <body>
     <header class="header">
+        <div class="scroll-line" id="scrollLine"></div>
         <div class="header__top">
             <div class="header__top_part header__top_part--left">
                 <picture>
@@ -37,12 +38,11 @@
             <h4 class="header__bottom_title">Эксклюзивный дистрибьютор завода КРАСПАН по Самарской области и Республике Татарстан</h4>
         </div>
     </header>
-    <div class="wrapper">
-        <section class="section section-top">
+    <div class="wrapper wrapper--desktop" data-scroll-container>
+        <!--  Intro  -->
+        <section class="section section-top" id="sectionFront_0" data-scroll-section>
             <div class="section-top__slider master-slider" id="slider_front">
-
-                    <img src="images/product-marketing.jpg" data-src="" alt="">
-
+                <img src="images/product-marketing.jpg" data-src="" alt="">
                 <div class="gallery__arrow gallery__arrow--[[+tv.structureDirection]]" id="slider_arrow_front"></div>
             </div>
             <div class="container">
@@ -58,7 +58,113 @@
                 </div>
             </div>
         </section>
+
+        <!--  Materials  -->
+        <section class="section section--padding" id="sectionFront_1" data-scroll-section>
+            <div class="container">
+                <div class="section__warning">
+                    <h2 class="section__warning_title">Внимание! Новые материалы!</h2>
+                </div>
+                <ul class="section__list">
+                    <li>
+                        <img src="images/materials/KraspabBrikStone.jpg" alt="">
+                        <p>Стальные структурированные кассеты</p>
+                    <li>
+                        <img src="images/materials/materials_img1.jpg"/>
+                        <p>Стальные композитные панели</p>
+                    <li>
+                        <img src="images/materials/materials_img2.jpg"/>
+                        <p>Фиброцементные панели</p>
+                    <li>
+                        <img src="images/materials/materials_img3.jpg"/>
+                        <p>Алюминиевые композитные панели</p>
+                </ul>
+                <div class="section-top__info_title">
+                    <a href="" class="section__link"><h3>Все материалы&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></h3></a>
+                </div>
+            </div>
+        </section>
+
+        <!--  Objects  -->
+        <section class="section section--gray" id="sectionFront_2" data-scroll-section>
+            <div class="container">
+
+            </div>
+        </section>
+
+        <!--  Info  -->
+        <section class="section section--padding" id="sectionFront_3" data-scroll-section>
+            <div class="container">
+                <div class="section__text">
+                    <div class="section__text_inside">
+                        <h3>Уважаемые архитекторы!</h3>
+                        <div class="section__text_block">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad aliquid aut beatae consequuntur corporis delectus dignissimos doloremque ducimus ea, eligendi eos eum harum ipsa ipsam ipsum laudantium necessitatibus nihil odio quam quasi quod ratione rem voluptate voluptatibus. Consectetur deleniti error ipsa molestiae, natus quisquam voluptate! Autem maiores modi mollitia.</p>
+                        </div>
+                    </div>
+                    <div class="section__text_inside">
+                        <h3>Уважаемые заказчики!</h3>
+                        <div class="section__text_block">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad aliquid aut beatae consequuntur corporis delectus dignissimos doloremque ducimus ea, eligendi eos eum harum ipsa ipsam ipsum laudantium necessitatibus nihil odio quam quasi quod ratione rem voluptate voluptatibus. Consectetur deleniti error ipsa molestiae, natus quisquam voluptate! Autem maiores modi mollitia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--  Montage  -->
+        <section class="section section--gray section--padding" id="sectionFront_4" data-scroll-section>
+            <div class="container">
+                <div class="section__title">
+                    <h2>Монтажные работы</h2>
+                </div>
+                <ul class="section__list_full">
+                    <li class="section__list_info">
+                        <img src="images/montage/service-1.jpg" alt="">
+                        <div class="section__list_title"><h3>Монтажные работы</h3></div>
+                        <div class="section__list_text">
+                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+                        </div>
+                    <li class="section__list_info">
+                        <img src="images/montage/service-2.jpg" alt="">
+                        <div class="section__list_title"><h3>Монтажные работы</h3></div>
+                        <div class="section__list_text">
+                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+                        </div>
+                    <li class="section__list_info">
+                        <img src="images/montage/service-1.jpg" alt="">
+                        <div class="section__list_title"><h3>Монтажные работы</h3></div>
+                        <div class="section__list_text">
+                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+                        </div>
+                    <li class="section__list_info">
+                        <img src="images/montage/service-2.jpg" alt="">
+                        <div class="section__list_title"><h3>Монтажные работы</h3></div>
+                        <div class="section__list_text">
+                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+                        </div>
+                    <li class="section__list_info">
+                        <img src="images/montage/service-1.jpg" alt="">
+                        <div class="section__list_title"><h3>Монтажные работы</h3></div>
+                        <div class="section__list_text">
+                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+                        </div>
+                    <li class="section__list_info">
+                        <img src="images/montage/service-2.jpg" alt="">
+                        <div class="section__list_title"><h3>Монтажные работы</h3></div>
+                        <div class="section__list_text">
+                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+                        </div>
+                </ul>
+            </div>
+        </section>
+
+
+        <footer class="footer" id="sectionFront_5" data-scroll-section>
+
+        </footer>
     </div>
+    <script src="js/vendor-min.js"></script>
     <script src="js/main-min.js"></script>
 </body>
 </html>

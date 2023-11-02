@@ -357,7 +357,7 @@
 
 .container {
 	width: $wrapperWidth;
-	min-height: 100vh;
+	min-height: 10vh;
 	display: block;
 	position: relative;
 	margin: 0 auto;
@@ -366,6 +366,22 @@
 	//transition: all .3s;
 	// box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
 	z-index: 1;
+
+	&--page {
+		margin-top: $headerHeight;
+	}
+
+	&__title {
+		width: 100%;
+		height: $sectionTopInfoHeight;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		text-align: center;
+		background-color: $fourth;
+		padding: calc(#{$padding} * 2) 0;
+	}
 
 	&-error {
 		width: 100%;

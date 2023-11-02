@@ -4,7 +4,7 @@
 
 $primary: #000000; //Темно-синий
 $secondary: #de0028; //Красный
-$third: #dad2dd; //15% $primary
+$third: lighten($primary, 90%); //15% $primary
 $fourth: #fff;
 $five: #f2a07c; // 50% $secondary
 $six: #000000;
@@ -469,7 +469,7 @@ a {
 }
 
 i {
-    transition: color $base-duration;
+    transition: all $base-duration;
 }
 
 svg {
