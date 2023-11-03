@@ -40,10 +40,17 @@
 		padding: $padding 0;
 		//background-color: $fourth;
 
+		&--white {
+			background-color: $fourth;
+		}
+
 		h2 {
 			//font-size: calc(#{$font-size-base} + 1.5rem);
+			display: inline-block;
 			color: $primary;
 			text-align: center;
+			padding-top: calc(#{$padding} / 2);
+			border-top: $border_normal solid $secondary;
 			//transition: color $base-duration;
 		}
 
@@ -1880,19 +1887,6 @@
 		}
 	}
 
-	&__tab {
-
-		&-content {
-			width: 100%;
-			height: auto;
-			display: block;
-		}
-
-		@include grid-media($XSmall) {
-			margin-bottom: calc(#{$padding} * 2);
-		}
-	}
-
 	&__warning {
 		width: 100%;
 		height: calc(#{$sectionTopInfoHeight} * 1.5);
@@ -1957,6 +1951,10 @@
 				object-fit: cover;
 				object-position: center;
 				z-index: 0;
+			}
+
+			&--single {
+				height: calc(#{$wrapperWidth} / 3);
 			}
 
 			&:hover {
@@ -2056,12 +2054,37 @@
 	}
 }
 
-.tab-pane {
-	display: none;
-	animation: 1s fadeIn;
+.tab {
 
-	&.active {
-		display: block;
+	&__menu {
+		width: 100%;
+		//height: calc(#{$padding} * 2);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		background-color: $fourth;
+
+		&_item {
+			height: 100%;
+		}
+
+		&_trigger {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: $padding calc(#{$padding} * 2);
+			cursor: pointer;
+
+			&.is-active{
+				background-color: $third;
+			}
+		}
+	}
+
+	&__content {
+		width: 100%;
+		padding: calc(#{$padding} * 2) 0 $padding;
 	}
 }
 /*============  End of Section  =============*/
