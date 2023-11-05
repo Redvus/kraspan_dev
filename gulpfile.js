@@ -73,6 +73,9 @@ gulp.task('main-js', function(){
     return gulp.src([
         // path.src.js + 'nav.js',
         path.src.js + 'Counters.js',
+        path.src.js + 'smoothScroll.js',
+        path.src.js + 'nav.js',
+        path.src.js + 'tabs.js',
         path.src.js + 'main.js'
     ])
     .pipe(concat('main.js'))
@@ -140,7 +143,12 @@ gulp.task('watch', function() {
     gulp.watch(path.watch.scss + '*.scss', gulp.series('main-scss'));
     gulp.watch(path.watch.scss + 'login.scss', gulp.series('login-scss'));
     gulp.watch(path.watch.js + 'vendor.js', gulp.series('vendor-js'));
-    gulp.watch([path.watch.js + 'main.js', path.watch.js + 'Counters.js'], gulp.series('main-js'));
+    gulp.watch([
+        path.watch.js + 'main.js',
+        path.watch.js + 'nav.js',
+        path.watch.js + 'tabs.js',
+        path.watch.js + 'smoothScroll.js',
+        path.watch.js + 'Counters.js'], gulp.series('main-js'));
     gulp.watch(path.watch.js + 'contact.js', gulp.series('contact-js'));
     gulp.watch(path.watch.js + 'preloader.js', gulp.series('preloader-js'));
     // gulp.watch(path.watch.js + 'jgrowl.js', gulp.series('jgrowl-js'));
