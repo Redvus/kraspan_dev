@@ -547,5 +547,14 @@ select {
     line-height: inherit;
 }
 
+%image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    object-position: center;
+    object-fit: cover;
+}
+
 /*=====  End of Layout  ======*/
 

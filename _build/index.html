@@ -228,7 +228,42 @@
     </section>
 
 
-    <footer class="footer" id="sectionFront_5" data-scroll-section>
+    <footer class="footer" id="sectionFront_5">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__top_part footer__top_part--left">
+                    <picture>
+                        <img src="images/kraspanKazanLogoW.png" alt="">
+                    </picture>
+                    <ul class="footer__top_adress">
+                        <li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:">8 (927) 001-01-07</a></li>
+                        <li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:">fasad-sk@mail.ru</a></li>
+                    </ul>
+                </div>
+                <div class="footer__top_center">
+                    <picture>
+                        <img src="images/kraspanMap.png" alt="">
+                    </picture>
+                </div>
+                <div class="footer__top_part footer__top_part--right">
+                    <picture>
+                        <img src="images/kraspanSamaraLogoW.png" alt="">
+                    </picture>
+                    <ul class="footer__top_adress">
+                        <li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:">8 (927) 782-71-66</a></li>
+                        <li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:">fasad-krt@mail.ru</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__bottom_copyright">
+                    <p>{$_modx->runSnippet('footer-year-begin',['start'=>2007])} ® {$_modx -> config.company_name_full}. Все права защищены. Копирование материалов с сайта запрещено.</p>
+                </div>
+                <div class="footer__bottom_author">
+                    <a href="https://redvus.ru" target="_blank">{'author'|chunk}</a>
+                </div>
+            </div>
+        </div>
 
     </footer>
 </div>

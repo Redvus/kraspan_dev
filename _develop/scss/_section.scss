@@ -1981,7 +1981,7 @@
 			left: 0;
 			background-color: rgba($primary, 0.3);
 			z-index: 1;
-			transition: opacity $base-duration;
+			transition: all $base-duration;
 
 			h2, h3, h4 {
 				color: $fourth;
@@ -2002,7 +2002,7 @@
 			left: 0;
 			background-color: rgba($primary, 0.3);
 			z-index: 2;
-			transition: opacity $base-duration;
+			transition: all $base-duration;
 			opacity: 0;
 
 			h2, h3, h4 {
