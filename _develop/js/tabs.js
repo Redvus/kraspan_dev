@@ -7,25 +7,10 @@ function objectsTabs() {
         tabMenuTrigger[i].addEventListener('click', tabSwitch, false);
     }
 
-    const fadeIn = gsap.timeline({
-        defaults: { duration: 0.4 }
-    })
-
     let flag = 0;
     const arrayPanels = document.querySelectorAll('.js-tab-target');
 
-    if(flag === 0) {
-        gsap.set(arrayPanels[0],{autoAlpha:1,display:'flex'})
-        flag = 1
-    }
-
-    function handle(event) {
-        event.preventDefault();
-    }
-
     function tabSwitch(){
-        document.addEventListener('click', handle, { passive: false });
-
         document.getElementsByClassName('is-active')[0].classList.remove('is-active');
         this.classList.add('is-active');
         const arrayTabs = Array.prototype.slice.call(tabMenuTrigger);
@@ -39,16 +24,6 @@ function objectsTabs() {
                 display: 'none'
             })
         });
-
-        for (let i = 0; i < tabMenuTrigger.length; i++) {
-            tabMenuTrigger[i].style.pointerEvents = 'none'
-        }
-
-        setTimeout(() => {
-            for (let i = 0; i < tabMenuTrigger.length; i++) {
-                tabMenuTrigger[i].style.pointerEvents = 'auto'
-            }
-        }, 300);
 
         let tl = gsap.timeline();
         tl

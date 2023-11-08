@@ -45,7 +45,7 @@ $HSmall: (media: "(max-height: 420px)");
 -------------------------------------------------- */
 $padding: 1rem;
 $heightPart: 1vmax;
-$wrapperWidth: $padding * 76;
+$wrapperWidth: $padding * 75;
 $wrapperWidthPad: $padding * 62;
 $wrapperWidthMobile: calc(100% - (#{$padding} * 2));
 
