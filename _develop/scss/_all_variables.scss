@@ -56,7 +56,7 @@ $objectScewReverseUp: skew(42deg);
 /* Layout
 -------------------------------------------------- */
 %wrapperWidth {
-    width: $padding * 76;
+    width: $padding * 75;
 
     @include grid-media($Medium) {
         width: $padding * 62;

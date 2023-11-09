@@ -76,6 +76,7 @@ gulp.task('main-js', function(){
         path.src.js + 'smoothScroll.js',
         path.src.js + 'nav.js',
         path.src.js + 'tabs.js',
+        path.src.js + 'slider.js',
         path.src.js + 'main.js'
     ])
     .pipe(concat('main.js'))
@@ -114,6 +115,7 @@ gulp.task('vendor-js', function(){
         path.src.npm + 'gsap/dist/' + 'ScrollTrigger.js',
         path.src.npm + 'imagesloaded/' + 'imagesloaded.pkgd.js',
         path.src.npm + 'locomotive-scroll/dist/' + 'locomotive-scroll.js',
+        path.src.js + 'masterslider.js',
         // path.src.npm + 'plyr/dist/' + 'plyr.js',
         // path.src.js + 'jquery.requestAnimationFrame.js',
         // path.src.js + 'jquery.mousewheel.js',
@@ -148,6 +150,7 @@ gulp.task('watch', function() {
         path.watch.js + 'nav.js',
         path.watch.js + 'tabs.js',
         path.watch.js + 'smoothScroll.js',
+        path.watch.js + 'slider.js',
         path.watch.js + 'Counters.js'], gulp.series('main-js'));
     gulp.watch(path.watch.js + 'contact.js', gulp.series('contact-js'));
     gulp.watch(path.watch.js + 'preloader.js', gulp.series('preloader-js'));

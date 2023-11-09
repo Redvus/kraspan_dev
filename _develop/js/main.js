@@ -1,5 +1,9 @@
 'use strict';
 
+const sliderFront = document.getElementById('sliderFront'),
+    objectsTab = document.getElementById('objectsTab')
+;
+
 function countersFront() {
     const countersAll = new Counters();
     countersAll.counterLoad('counterFasad', 180);
@@ -24,6 +28,9 @@ function clickFrame() {
 function initMain() {
     if (typeof objectsTab) {
         objectsTabs();
+    }
+    if (typeof sliderFront) {
+        frontSlider();
     }
 }
 

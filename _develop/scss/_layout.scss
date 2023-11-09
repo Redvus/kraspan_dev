@@ -371,6 +371,12 @@
 		margin-top: $headerHeight;
 	}
 
+	&--intro {
+		position: absolute;
+		bottom: 0;
+		margin-left: calc((100% - #{$wrapperWidth}) / 2);
+	}
+
 	&__title {
 		width: 100%;
 		height: $sectionTopInfoHeight;
@@ -381,6 +387,11 @@
 		text-align: center;
 		background-color: $fourth;
 		padding: calc(#{$padding} * 2) 0;
+
+		h1 {
+			padding-top: calc(#{$padding} / 2);
+			border-top: $border_normal solid $secondary;
+		}
 	}
 
 	&-error {

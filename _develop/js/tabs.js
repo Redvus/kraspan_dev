@@ -1,5 +1,3 @@
-const objectsTab = document.getElementById('objectsTab');
-
 function objectsTabs() {
     const tabMenuTrigger = document.querySelectorAll('.tab__menu_trigger')
 
