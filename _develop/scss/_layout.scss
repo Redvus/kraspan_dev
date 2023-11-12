@@ -369,6 +369,7 @@
 
 	&--page {
 		margin-top: $headerHeight;
+		z-index: 2;
 	}
 
 	&--intro {

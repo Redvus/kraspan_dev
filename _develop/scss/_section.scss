@@ -12,7 +12,7 @@
 	z-index: 2;
 
 	&--padding {
-		padding: calc(#{$padding} * 2) 0;
+		padding-bottom: calc(#{$padding} * 2);
 	}
 
 	&-wrapper {
@@ -37,7 +37,7 @@
 		justify-content: center;
 		position: relative;
 		text-align: center;
-		padding: $padding 0;
+		padding: calc(#{$padding} * 2) 0;
 		//background-color: $fourth;
 
 		&--white {
@@ -1958,6 +1958,7 @@
 			position: relative;
 			cursor: pointer;
 
+
 			img {
 				width: 100%;
 				height: 100%;
@@ -1966,10 +1967,6 @@
 				object-fit: cover;
 				object-position: center;
 				z-index: 0;
-			}
-
-			&--single {
-				height: calc(#{$wrapperWidth} / 4);
 			}
 
 			&:hover {
@@ -2026,6 +2023,39 @@
 				text-shadow: $border_thin $border_thin $border_normal $primary;
 			}
 		}
+
+		&_single {
+			@include rowMachine(3, $padding);
+			overflow: hidden;
+			position: relative;
+			cursor: pointer;
+
+			picture {
+				width: 100%;
+				height: calc(#{$wrapperWidth} / 4);
+				display: block;
+				position: relative;
+
+				img {
+					width: 100%;
+					height: 100%;
+					display: block;
+					position: relative;
+					object-fit: cover;
+					object-position: center;
+					z-index: 0;
+				}
+			}
+		}
+
+		&_description {
+			width: 100%;
+			height: calc(#{$wrapperWidth} / 5);
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			position: relative;
+		}
 	}
 
 	&__link {
@@ -2080,6 +2110,11 @@
 		justify-content: center;
 		background-color: $fourth;
 
+		&--page {
+			background-color: transparent;
+			z-index: 2;
+		}
+
 		&_item {
 			height: 100%;
 		}
@@ -2094,12 +2129,30 @@
 			&.is-active{
 				background-color: $third;
 			}
+
+			&--page {
+
+				&.is-active{
+					background-color: $fourth;
+					border-top: $border_normal solid $secondary;
+					//border-bottom: $border_normal solid $fourth;
+					border-left: $border_normal solid $secondary;
+					border-right: $border_normal solid $secondary;
+					padding: calc(#{$padding} - #{$border_normal}) calc((#{$padding} * 2) - (#{$border_normal} * 2)) $padding;
+				}
+			}
 		}
 	}
 
 	&__content {
 		width: 100%;
 		padding: calc(#{$padding} * 2) 0 $padding;
+
+		&--page {
+			border-top: $border_normal solid $secondary;
+			margin-top: calc((-#{$border_normal}) + (#{$padding} * 0.03));
+			z-index: 1;
+		}
 	}
 }
 /*============  End of Section  =============*/
