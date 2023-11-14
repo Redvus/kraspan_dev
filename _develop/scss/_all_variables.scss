@@ -73,8 +73,8 @@ $objectScewReverseUp: skew(42deg);
 
 /* Header
 -------------------------------------------------- */
-$headerTopHeight: calc(#{$heightPart} * 6);
-$headerBottomHeight: calc(#{$heightPart} * 3);
+$headerTopHeight: calc(#{$padding} * 5);
+$headerBottomHeight: calc(#{$padding} * 2.5);
 $headerLineHeight: calc(#{$padding} / 3);
 $headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight});
 
