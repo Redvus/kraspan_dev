@@ -12,7 +12,7 @@
 	z-index: 2;
 
 	&--padding {
-		padding-bottom: calc(#{$padding} * 2);
+		padding: calc(#{$padding} * 2) 0;
 	}
 
 	&-wrapper {
@@ -2135,6 +2135,10 @@
 			border-left: $border_bold solid $secondary;
 			padding-left: calc(#{$padding} * 2);
 		}
+	}
+
+	&:last-child {
+		padding-top: 0;
 	}
 }
 
