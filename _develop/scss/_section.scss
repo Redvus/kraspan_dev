@@ -137,7 +137,11 @@
 			flex-direction: column;
 			position: absolute;
 			//margin-top: calc(-#{$sectionTopInfoHeight} * 2);
-			bottom: 0;
+			bottom: calc(#{$padding} * 2);
+			border: $border_bold solid $secondary;
+			//border-left: $border_bold solid $secondary;
+			//border-right: $border_bold solid $secondary;
+			//box-shadow: 0 0 $padding rgba($six, 0.3);
 
 			&_title {
 				width: 100%;
@@ -1923,7 +1927,7 @@
 		position: relative;
 
 		li {
-			@include rowMachine(4, $padding);
+			@include rowMachine(5, $padding);
 			white-space: normal;
 			position: relative;
 
@@ -1967,15 +1971,21 @@
 				object-fit: cover;
 				object-position: center;
 				z-index: 0;
+				transition: transform $base-duration;
 			}
 
 			&:hover {
+
+				img {
+					transform: scaleX(0);
+				}
 
 				.section__list_title {
 					opacity: 0;
 				}
 
 				.section__list_text {
+					transform: scaleX(1);
 					opacity: 1;
 				}
 			}
@@ -2016,6 +2026,7 @@
 			z-index: 2;
 			transition: all $base-duration;
 			opacity: 0;
+			transform: scaleX(0);
 
 			h2, h3, h4 {
 				color: $fourth;
@@ -2093,7 +2104,8 @@
 		}
 
 		&_year {
-			color: $secondary;
+			font-family: $primary-font;
+			//color: $secondary;
 		}
 	}
 
