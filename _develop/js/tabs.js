@@ -1,12 +1,23 @@
 function objectsTabs() {
-    const tabMenuTrigger = document.querySelectorAll('.tab__menu_trigger')
+    const tabMenuTrigger = document.querySelectorAll('.tab__menu_trigger'),
+        arrayPanels = document.querySelectorAll('.js-tab-target')
+    ;
+    let flag = 0;
 
     for(let i = 0; i < tabMenuTrigger.length; i++) {
         tabMenuTrigger[i].addEventListener('click', tabSwitch, false);
+        if(tabMenuTrigger[i] !== tabMenuTrigger[0]) {
+            gsap.set(arrayPanels, {
+                autoAlpha: 0,
+                display: 'none'
+            });
+        }
     }
 
-    let flag = 0;
-    const arrayPanels = document.querySelectorAll('.js-tab-target');
+    if(flag === 0) {
+        gsap.set(arrayPanels[0],{autoAlpha:1,display:'flex'})
+        flag = 1
+    }
 
     function tabSwitch(){
         document.getElementsByClassName('is-active')[0].classList.remove('is-active');
@@ -20,7 +31,7 @@ function objectsTabs() {
             gsap.set(tab, {
                 autoAlpha: 0,
                 display: 'none'
-            })
+            });
         });
 
         let tl = gsap.timeline();

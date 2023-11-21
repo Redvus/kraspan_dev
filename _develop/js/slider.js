@@ -16,5 +16,9 @@ function frontSlider() {
         view: 'parallaxMask',
         layout: 'autofill', //fullscreen
         speed: 20,
+        swipe: false,
+        mouse: false,
+        wheel: false,
+        overPause: false
     });
 }

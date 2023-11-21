@@ -32,10 +32,11 @@ function initMain() {
     if (typeof sliderFront) {
         frontSlider();
     }
+    modalLoad();
 }
 
 function initMainMobile() {
-    // scrollSmoothMobile();
+
 }
 
 if (document.body.clientWidth > 820 || screen.width > 820) {
