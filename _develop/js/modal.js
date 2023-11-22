@@ -1,24 +1,24 @@
 'use strict';
 
+const modalWrapper = document.querySelector('.wrapper-modal'),
+    bodyWrapper = document.querySelector('body'),
+    modalMask = document.createElement('div'),
+    modalClose = document.querySelector('.wrapper-modal__close')
+;
+
+modalMask.className += 'wrapper-modal__mask';
+
+const materialLink_1 = document.getElementById('materialLink_1');
+
+const materialContent_1 = document.getElementById('materialContent_1');
+
 function modalLoad() {
-    const modalWrapper = document.querySelector('.wrapper-modal'),
-        bodyWrapper = document.querySelector('body'),
-        modalMask = document.createElement('div'),
-        modalClose = document.querySelector('.wrapper-modal__close')
-    ;
-
-    modalMask.className += 'wrapper-modal__mask';
-
-    const materialLink_1 = document.getElementById('materialLink_1');
-
-    const materialContent_1 = document.getElementById('materialContent_1');
-
     let tl = new gsap.timeline({
         reversed: true
     });
     tl
         .from(modalMask, {
-            duration: 0.3,
+            duration: 0.4,
             // delay: "-0.3",
             autoAlpha: 0
         })
@@ -27,7 +27,7 @@ function modalLoad() {
             delay: "-0.3",
             autoAlpha: 0,
             x: "100%",
-            ease: "power3.inOut"
+            ease: "power1.inOut"
         })
         .from(modalClose, {
             duration: 0.3,
@@ -45,12 +45,12 @@ function modalLoad() {
         tl.reversed() ? tl.restart() : tl.reverse();
         setTimeout(() => {
             bodyWrapper.removeChild(modalMask);
-        }, 500);
+        }, 600);
     });
     modalMask.addEventListener("click", () => {
         tl.reversed() ? tl.restart() : tl.reverse();
         setTimeout(() => {
             bodyWrapper.removeChild(modalMask);
-        }, 500);
+        }, 600);
     });
 }

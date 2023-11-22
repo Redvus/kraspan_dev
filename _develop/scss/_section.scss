@@ -1923,21 +1923,77 @@
 
 	&__list {
 		width: 100%;
-		display: block;
+		display: flex;
+		flex-wrap: wrap;
 		position: relative;
 
-		li {
-			@include rowMachine(5, $padding);
+		&_simple {
+			@include rowMachine(4, $padding);
 			white-space: normal;
+			overflow: hidden;
 			position: relative;
 
-			img {
+			a {
 				width: 100%;
 				height: 100%;
 				display: block;
+				position: absolute;
+				z-index: 2;
+
+				picture {
+
+					img {
+						opacity: 0;
+					}
+				}
+
+				&:hover {
+
+					.section__list_simple--mask {
+
+						i {
+							opacity: 0.7;
+						}
+					}
+				}
+			}
+
+			picture {
+				width: 100%;
+				display: block;
 				position: relative;
-				object-fit: cover;
+				margin-bottom: $padding;
 				z-index: 0;
+
+				img {
+					width: 100%;
+					height: 100%;
+					display: block;
+					position: relative;
+					object-fit: cover;
+					z-index: 0;
+				}
+			}
+
+			&--mask {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				top: 0;
+				left: 0;
+				//background-color: rgba($primary, 0.15);
+				transition: all $base-duration;
+				z-index: 1;
+
+				i {
+					color: $fourth;
+					font-size: $font-size-h1;
+					opacity: 0;
+					z-index: 2;
+				}
 			}
 
 			p {
