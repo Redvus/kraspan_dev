@@ -1998,12 +1998,29 @@
 
 			p {
 				width: calc(100% - (#{$padding} * 2));
+				height: calc(#{$padding} * 4);
 				display: flex;
 				align-items: flex-start;
 				justify-content: center;
 				text-align: center;
 				padding: 0 $padding;
 			}
+		}
+
+		&_button {
+			width: calc(100% - (#{$padding} * 2));
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			background-color: $secondary;
+			padding: calc($padding / 2) $padding;
+			margin: $padding 0;
+			border-radius: $border_normal;
+			bottom: 0;
+			color: $fourth;
+			z-index: 100;
+			cursor: pointer;
 		}
 
 		&_full {

@@ -1,7 +1,8 @@
 'use strict';
 
 const sliderFront = document.getElementById('sliderFront'),
-    objectsTab = document.getElementById('objectsTab')
+    objectsTab = document.getElementById('objectsTab'),
+    sectionMaterials = document.getElementById('sectionMaterials')
 ;
 
 function countersFront() {
@@ -11,20 +12,6 @@ function countersFront() {
     countersAll.counterLoad('counterDistrict', 9);
 }
 
-function clickFrame() {
-    const clickMe = document.getElementById('clickMe'),
-        iframeEl = document.createElement('iframe'),
-        wrapper = document.querySelector('.wrapper')
-    ;
-    clickMe.addEventListener("click", () => {
-        iframeEl.src = 'https://readvus.ru/technique/213-restoring-the-windows-bootloader.html';
-        iframeEl.onload = () => {
-            iframeEl.contentDocument;
-        };
-        wrapper.appendChild(iframeEl);
-    });
-}
-
 function initMain() {
     if (typeof objectsTab) {
         objectsTabs();
@@ -32,7 +19,14 @@ function initMain() {
     if (typeof sliderFront) {
         frontSlider();
     }
-    modalLoad();
+
+    if (sectionMaterials) {
+        const modalLoadNew = new Modal();
+        modalLoadNew.modalLoad('materialLink_1', 'kraspanmetalcolor/metalcolor-info/');
+        modalLoadNew.modalLoad('materialLink_2', 'kraspancomposite-st/composite-st-info/');
+        modalLoadNew.modalLoad('materialLink_3', 'kraspanfibrocementcolor/fiber-cement-info/');
+        modalLoadNew.modalLoad('materialLink_4', 'kraspanfibrocementcolor-2');
+    }
 }
 
 function initMainMobile() {

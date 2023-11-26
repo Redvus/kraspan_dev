@@ -317,7 +317,7 @@ $font-size-small: $font-size-base - 0.2 !default; // ~14px
 $font-size-h1: calc(#{$font-size-base} + 1.8rem) !default; //calc(1rem + 2vmax) !default; // ~3rem 48px modular-scale(6)
 $font-size-h2: calc(1rem + 0.9vmax) !default; // ~2.5rem 40px modular-scale(5)
 $font-size-h3: calc(#{$font-size-base} + 0.5rem) !default; // ~2rem 33px calc(1rem + 0.7vmax) !default
-$font-size-h4: calc(#{$heading-font-modular} + 0.3vmax) !default; // ~1.728rem 28px
+$font-size-h4: calc(#{$font-size-base} + 0.2rem) !default; // ~1.728rem 28px
 $font-size-h5: calc(1rem + 0.10vmax) !default; // ~1.44rem 23px
 $font-size-h6: calc(1rem + 0.07vmax) !default; // ~1.2rem 19px
 
@@ -344,7 +344,7 @@ $font-size-h6: calc(1rem + 0.07vmax) !default; // ~1.2rem 19px
     }
 
     @include grid-media($XSmall) {
-        font-size: $font-size-large;
+        font-size: $font-size-base;
     }
 
     @include grid-media($Small) {
@@ -446,7 +446,7 @@ ul {
         }
 
         @include grid-media($XSmall) {
-            font-size: $font-size-large;
+            font-size: $font-size-base;
         }
 
         @include grid-media($Small) {
