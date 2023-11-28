@@ -493,7 +493,7 @@
 	//}
 
 	@include grid-media($XSmall) {
-		padding-top: $headerMobileTopHeight;
+		padding-top: $headerHeightMobile;
 
 		&--desktop {
 			display: none;
@@ -660,9 +660,18 @@
 	}
 
 	@include grid-media($XSmall) {
+		width: calc(100% - (#{$padding} * 2));
+
+		&--intro {
+			margin: 0 $padding;
+		}
 
 		&_news {
 			padding-right: 0;
+		}
+
+		&--page {
+			margin-top: 0;
 		}
 	}
 

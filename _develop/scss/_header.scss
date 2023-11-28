@@ -17,11 +17,6 @@
 		visibility: visible;
 	}
 
-	&--mobile {
-		display: none;
-		visibility: hidden;
-	}
-
 	&__wrapper {
 		@extend %wrapperWidth;
 		height: 100%;
@@ -192,6 +187,45 @@
 					color: $secondary;
 				}
 			}
+
+			&--mobile {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+
+				li {
+					width: calc(50% - #{$border_normal});
+					height: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-color: $third;
+					border-right: $border_normal solid $fourth;
+
+					i {
+						color: $secondary;
+					}
+
+					a:hover {
+						color: $secondary;
+					}
+
+					//&:first-child {
+					//	width: calc(50% - #{$border_normal});
+					//	border-right: $border_normal solid $fourth;
+					//}
+				}
+
+				&-right {
+
+					li {
+						border-left: $border_normal solid $fourth;
+						border-right: none;
+					}
+				}
+			}
 		}
 
 		&_info {
@@ -282,9 +316,9 @@
 	/* Header Mobile
 	-------------------------------------------------- */
 
-	&-mobile {
+	&--mobile {
 		width: 100%;
-		height: $headerMobileTopHeight;
+		height: $headerHeightMobile;
 		position: fixed;
 		flex-direction: row;
 		top: 0;
@@ -462,8 +496,69 @@
 	/* End of Header Mobile
 	-------------------------------------------------- */
 
+	@include grid-media($XXLarge) {
+
+		&--mobile {
+			display: none;
+			visibility: hidden;
+		}
+
+		&__top {
+
+			&_adress {
+
+				&--mobile {
+					display: none;
+					visibility: hidden;
+				}
+			}
+		}
+	}
+
+	@include grid-media($XLarge) {
+
+		&--mobile {
+			display: none;
+			visibility: hidden;
+		}
+
+		&__top {
+
+			&_adress {
+
+				&--mobile {
+					display: none;
+					visibility: hidden;
+				}
+			}
+		}
+	}
+
+	@include grid-media($Large) {
+
+		&--mobile {
+			display: none;
+			visibility: hidden;
+		}
+
+		&__top {
+
+			&_adress {
+
+				&--mobile {
+					display: none;
+					visibility: hidden;
+				}
+			}
+		}
+	}
+
 	@include grid-media($Medium) {
 
+		&--mobile {
+			display: none;
+			visibility: hidden;
+		}
 	}
 
 	@include grid-media($XSmall) {
@@ -477,11 +572,56 @@
 			display: none;
 			visibility: hidden;
 		}
+
+		&__top {
+
+			&_info {
+				display: none;
+				visibility: hidden;
+			}
+
+			&_part {
+				width: 50%;
+				flex-direction: column;
+
+				&--left {
+					width: calc(50% - #{$border_thin});
+					padding-left: 0;
+					border-right: $border_thin solid $primary;
+				}
+
+				&--right {
+					padding-right: 0;
+					flex-direction: column-reverse;
+				}
+
+				picture {
+
+					img {
+						height: 60%;
+						margin-top: calc(#{$padding} * 0.3);
+					}
+				}
+			}
+
+			&_adress {
+				display: none;
+				visibility: hidden;
+			}
+
+			&_link {
+				width: 80%;
+			}
+		}
+
+		&__bottom {
+			display: none;
+			visibility: hidden;
+		}
 	}
 
 	@include grid-media($Small) {
-		display: none;
-		visibility: hidden;
+
 
 		&-mobile {
 

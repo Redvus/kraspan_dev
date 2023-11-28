@@ -235,6 +235,21 @@
             font-size: $font-size-h2;
         }
     }
+
+    @include grid-media($XSmall) {
+
+        &__title {
+            font-size: calc(1rem + 0.9vmax);
+
+            span {
+                font-size: calc(1rem + 0.7vmax);
+            }
+        }
+
+        &__front {
+            margin-top: -20vh;
+        }
+    }
 }
 
 /*=====  End of Front Slider  ======*/

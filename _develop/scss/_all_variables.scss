@@ -83,7 +83,7 @@ $headerInfoWidth: 35%;
 $headerMenuPadding: 5rem;
 $headingPartPadding: calc(#{$padding} * 4);
 
-$headerHeightMobile: $padding;
+$headerHeightMobile: calc(#{$padding} * 5);
 $headerHeightBottom: $padding;
 
 /* Nav
@@ -112,7 +112,7 @@ $inputHeight: $padding * 2.5;
 
 $structureLogoWidth: 20%;
 
-$sectionTopHeightMobile: 40vmax;
+$sectionTopHeightMobile: calc(100vh - #{$headerHeightMobile});
 
 $modalWidth: calc((#{$padding} * 50) - (#{$padding} * 6));
 
