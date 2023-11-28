@@ -114,6 +114,8 @@ $structureLogoWidth: 20%;
 
 $sectionTopHeightMobile: 40vmax;
 
+$modalWidth: calc((#{$padding} * 50) - (#{$padding} * 6));
+
 /* Section
 -------------------------------------------------- */
 $sectionInfoWidth: 100vw;
@@ -348,7 +350,7 @@ $font-size-h6: calc(1rem + 0.07vmax) !default; // ~1.2rem 19px
     }
 
     @include grid-media($Small) {
-        font-size: $font-size-large;
+        font-size: $font-size-base;
     }
 }
 
@@ -450,7 +452,7 @@ ul {
         }
 
         @include grid-media($Small) {
-            font-size: $font-size-large;
+            font-size: $font-size-base;
         }
     }
 }

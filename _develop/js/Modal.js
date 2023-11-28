@@ -18,6 +18,20 @@ class Modal {
             <i class="fas fa-close"></i>
         `;
 
+        function bodyFixed() {
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.scrollY}px`;
+            document.body.style.width = '100vw';
+        }
+
+        function bodyUnFixed() {
+            const scrollYTop = document.body.style.top;
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, parseInt(scrollYTop || '0') * -1);
+        }
+
         function modalLoadAnim() {
             const materialLinkID = document.getElementById(materialLink);
 
@@ -28,6 +42,7 @@ class Modal {
                     modalWrapper.appendChild(modalWrapperContainer);
                     modalWrapper.appendChild(modalClose);
                     modalWrapperContainer.appendChild(iframeEl);
+                    bodyFixed();
                     // modalWrapperContainer.id = materialContent;
                     iframeEl.src = `https://kraspan.redvus.ru/materials-all/${materialSrc}`;
                     iframeEl.onload = () => {
@@ -73,6 +88,7 @@ class Modal {
                     modalWrapper.removeChild(modalClose);
                     bodyWrapper.removeChild(modalWrapper);
                     modalWrapperContainer.removeChild(iframeEl);
+                    bodyUnFixed();
                 }, 1100);
             });
             modalMask.addEventListener("click", () => {
@@ -83,6 +99,7 @@ class Modal {
                     modalWrapper.removeChild(modalClose);
                     bodyWrapper.removeChild(modalWrapper);
                     modalWrapperContainer.removeChild(iframeEl);
+                    bodyUnFixed();
                 }, 1100);
             });
         }

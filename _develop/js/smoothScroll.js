@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 function scrollSmooth() {
 
     const scrollLine = document.getElementById('scrollLine'),
-        wrapper = document.querySelector('.wrapper'),
+        wrapper = document.querySelector('.wrapper-single'),
         locoScroll = new LocomotiveScroll({
             el: wrapper,
             smooth: true,

@@ -1947,15 +1947,7 @@
 					}
 				}
 
-				&:hover {
 
-					.section__list_simple--mask {
-
-						i {
-							opacity: 0.7;
-						}
-					}
-				}
 			}
 
 			picture {
@@ -2005,6 +1997,16 @@
 				text-align: center;
 				padding: 0 $padding;
 			}
+
+			&:hover {
+
+				.section__list_simple--mask {
+
+					i {
+						opacity: 0.7;
+					}
+				}
+			}
 		}
 
 		&_button {
@@ -2021,6 +2023,11 @@
 			color: $fourth;
 			z-index: 100;
 			cursor: pointer;
+			transition: background-color $base-duration;
+
+			&:hover {
+				background-color: darken($secondary, 10%);
+			}
 		}
 
 		&_full {
