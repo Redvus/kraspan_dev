@@ -6,7 +6,9 @@ class Modal {
             bodyWrapper = document.querySelector('body'),
             modalMask = document.createElement('div'),
             modalClose = document.createElement('div'),
-            iframeEl = document.createElement('iframe')
+            iframeEl = document.createElement('iframe'),
+            wrapperDesktop = document.querySelector('.wrapper'),
+            scrollPosition = document.documentElement.scrollTop
         ;
 
         modalWrapper.className += 'wrapper-modal';
@@ -19,17 +21,20 @@ class Modal {
         `;
 
         function bodyFixed() {
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${window.scrollY}px`;
-            document.body.style.width = '100vw';
+            window.addEventListener('scroll', function () {
+                wrapperDesktop.style.top = scrollPosition;
+                bodyWrapper.style.position = 'fixed';
+                bodyWrapper.style.width = '100vw';
+                console.log(scrollPosition);
+            });
+
         }
 
         function bodyUnFixed() {
             const scrollYTop = document.body.style.top;
-            document.body.style.position = '';
-            document.body.style.top = '';
+            // document.body.style.position = '';
+            // document.body.style.top = '';
             document.body.style.width = '';
-            window.scrollTo(0, parseInt(scrollYTop || '0') * -1);
         }
 
         function modalLoadAnim() {
@@ -42,7 +47,6 @@ class Modal {
                     modalWrapper.appendChild(modalWrapperContainer);
                     modalWrapper.appendChild(modalClose);
                     modalWrapperContainer.appendChild(iframeEl);
-                    bodyFixed();
                     // modalWrapperContainer.id = materialContent;
                     iframeEl.src = `https://kraspan.redvus.ru/materials-all/${materialSrc}`;
                     iframeEl.onload = () => {
@@ -88,7 +92,6 @@ class Modal {
                     modalWrapper.removeChild(modalClose);
                     bodyWrapper.removeChild(modalWrapper);
                     modalWrapperContainer.removeChild(iframeEl);
-                    bodyUnFixed();
                 }, 1100);
             });
             modalMask.addEventListener("click", () => {
@@ -99,7 +102,6 @@ class Modal {
                     modalWrapper.removeChild(modalClose);
                     bodyWrapper.removeChild(modalWrapper);
                     modalWrapperContainer.removeChild(iframeEl);
-                    bodyUnFixed();
                 }, 1100);
             });
         }
