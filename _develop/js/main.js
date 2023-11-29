@@ -61,13 +61,13 @@ function initMain() {
         modalLoadNew.modalLoad('materialLink_2', 'kraspanbrickform-brick/brickform-info/');
         modalLoadNew.modalLoad('materialLink_3', 'kraspanfibrocementcolor/fiber-cement-info/');
         modalLoadNew.modalLoad('materialLink_4', 'kraspan-photo-printing/photo-printing-info/');
-        modalLoadNew.modalLoad('materialLink_5', 'kraspanbrickform-travertine/brickformtravertine-info/');
-        modalLoadNew.modalLoad('materialLink_6', 'kraspanfibrocementcolor/fiber-cement-info/');
+        modalLoadNew.modalLoad('materialLink_5', 'kraspanmetaltex/kraspanmetaltex-long-cassettes-info/');
+        modalLoadNew.modalLoad('materialLink_6', 'kraspanmetaltex-large-format-cassettes/kraspanmetaltex-large-info/');
         modalLoadNew.modalLoad('materialLink_7', 'kraspanmetalcolor/metalcolor-info/');
         modalLoadNew.modalLoad('materialLink_8', 'kraspancomposite-st/composite-st-info/');
         modalLoadNew.modalLoad('materialLink_9', 'porcelain-stoneware-slabs/porcelain-tiles-info/');
         modalLoadNew.modalLoad('materialLink_10', 'kraspangranite/granit-info/');
-        modalLoadNew.modalLoad('materialLink_11', 'kraspanbrickstone/brickstone-info/');
+        modalLoadNew.modalLoad('materialLink_11', 'kraspantunnelcolor/kraspantunnelcolor-info/');
     }
 }
 
