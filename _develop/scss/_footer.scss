@@ -465,6 +465,21 @@ $footer-grid: (
                 line-height: 1;
             }
         }
+
+        &__bottom {
+            flex-direction: column;
+            border-top: none;
+
+            &_copyright {
+                width: 100%;
+                text-align: center;
+            }
+
+            &_author {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     }
 }
 
