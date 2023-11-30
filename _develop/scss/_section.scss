@@ -2240,11 +2240,12 @@
 		&__list {
 
 			&_simple {
-				@include rowMachine(2, $padding);
+				@include rowMachine(1, $padding);
 
 				p {
-					height: calc(#{$padding} * 5);
-					font-size: $font-size-small;
+					height: inherit;
+					min-height: calc(#{$padding} * 2);
+					//font-size: $font-size-small;
 				}
 			}
 

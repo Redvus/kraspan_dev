@@ -16,6 +16,10 @@
 		visibility: visible;
 	}
 
+	&--scroll {
+		min-height: 300vh;
+	}
+
 	&-single {
 		max-width: $modalWidth;
 		min-height: 30vh;
@@ -507,6 +511,18 @@
 		&--mobile {
 			display: block;
 			visibility: visible;
+		}
+
+		&-modal {
+			width: $modalWidthMobile;
+			height: calc(100vh - (#{$padding} * 2));
+			padding: $padding;
+
+			&__close {
+				width: calc(#{$padding} * 2.5);
+				height: calc(#{$padding} * 2.5);
+				transform: translate(40%, -50%);
+			}
 		}
 	}
 }

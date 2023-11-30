@@ -115,6 +115,7 @@ $structureLogoWidth: 20%;
 $sectionTopHeightMobile: calc(100vh - #{$headerHeightMobile});
 
 $modalWidth: calc((#{$padding} * 50) - (#{$padding} * 6));
+$modalWidthMobile: calc(90vw - (#{$padding} * 2));
 
 /* Section
 -------------------------------------------------- */

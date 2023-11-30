@@ -48,7 +48,7 @@ class Modal {
                     modalWrapper.appendChild(modalClose);
                     modalWrapperContainer.appendChild(iframeEl);
                     // modalWrapperContainer.id = materialContent;
-                    iframeEl.src = `https://kraspan.redvus.ru/materials-all/${materialSrc}`;
+                    iframeEl.src = `https://kraspan.redvus.ru/${materialSrc}`;
                     iframeEl.onload = () => {
                         iframeEl.contentDocument;
                     };
