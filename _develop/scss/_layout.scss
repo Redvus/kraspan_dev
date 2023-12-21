@@ -2,8 +2,6 @@
 /* ========================================================================== */
 .wrapper {
 	width: 100%;
-	//min-height: 100vh;
-	height: 100vh;
 	position: relative;
 	top: 0;
 	left: 0;
@@ -13,6 +11,7 @@
 	z-index: 1;
 
 	&--desktop {
+		height: 100vh;
 		display: block;
 		visibility: visible;
 	}
@@ -113,6 +112,7 @@
 	}
 
 	&--mobile {
+		min-height: 100vh;
 		display: none;
 		visibility: hidden;
 	}
