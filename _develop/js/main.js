@@ -1,6 +1,7 @@
 'use strict';
 
-const sliderFront = document.getElementById('sliderFront'),
+const
+    sliderFront = document.getElementById('sliderFront'),
     objectsTab = document.getElementById('objectsTab'),
     sectionMaterials = document.getElementById('sectionMaterials'),
     sectionMaterialsAll = document.getElementById('sectionMaterialsAll'),
@@ -16,7 +17,8 @@ function countersFront() {
     // countersAll.counterLoad('counterDistrict', 9);
 }
 
-const wrapper = document.querySelector('.wrapper'),
+const
+    wrapper = document.querySelector('.wrapper'),
     headerMob = document.querySelector('.header'),
     // headerDesktop = document.querySelector('.header'),
     headerTopPart = document.querySelector('.header__top_part'),
