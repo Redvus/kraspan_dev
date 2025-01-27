@@ -8,10 +8,12 @@ const sliderFront = document.getElementById('sliderFront'),
 ;
 
 function countersFront() {
-    const countersAll = new Counters();
-    countersAll.counterLoad('counterFasad', 180);
-    countersAll.counterLoad('counterObjects', 150);
-    countersAll.counterLoad('counterDistrict', 9);
+    new Counters('counterFasad', 180);
+    new Counters('counterObjects', 150);
+    new Counters('counterDistrict', 9);
+    // countersAll();
+    // countersAll.counterLoad('counterObjects', 150);
+    // countersAll.counterLoad('counterDistrict', 9);
 }
 
 const wrapper = document.querySelector('.wrapper'),
@@ -43,9 +45,9 @@ function initMain() {
     if (typeof objectsTab) {
         objectsTabs();
     }
-    if (typeof sliderFront) {
-        frontSlider();
-    }
+    // if (typeof sliderFront) {
+    //     frontSlider();
+    // }
 
     // if (sectionMaterials) {
     //     const modalLoadNew = new Modal();
@@ -76,7 +78,7 @@ function initMainMobile() {
         objectsTabs();
     }
     if (typeof sliderFront) {
-        frontSlider();
+        // frontSlider();
     }
     wrapperMob();
 }

@@ -1,6 +1,11 @@
 class Modal {
 
-    modalLoad(materialLink, materialSrc) {
+    constructor(materialLink, materialSrc) {
+        this.materialLink = materialLink;
+        this.materialSrc = materialSrc;
+    }
+
+    modalLoad() {
         const modalWrapper = document.createElement('div'),
             modalWrapperContainer = document.createElement('div'),
             bodyWrapper = document.querySelector('body'),

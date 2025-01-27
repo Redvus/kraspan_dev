@@ -17,8 +17,8 @@ var path = {
         npm: 'node_modules/'
     },
     dest: {
-        css: '_build/',
-        js: '_build/js/'
+        css: 'root/html/assets/',
+        js: 'root/html/assets/js/'
     },
     watch: {
         scss: '_develop/scss/',
