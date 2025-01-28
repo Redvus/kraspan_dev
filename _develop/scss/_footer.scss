@@ -76,13 +76,23 @@ $footer-grid: (
             }
 
             &--left {
-                width: calc(((50% / 2) - (#{$padding} * 3)));
-                padding: calc(#{$padding} * 3) calc(#{$padding} * 3) 0 0 ;
+                width: calc(((50% / 2) - (#{$padding} * 5)));
+                padding: calc(#{$padding} * 3) calc(#{$padding} * 5) 0 0 ;
+
+                picture {
+                    width: 70%;
+                }
             }
 
             &--right {
                 width: calc(((50% / 2) - (#{$padding} * 3)));
                 padding: calc(#{$padding} * 3) 0 0 calc(#{$padding} * 3);
+            }
+
+            &--wide {
+                width: calc((((50% / 2) * 3)));
+                padding: calc(#{$padding} * 3) 0 0;
+                justify-content: flex-end;
             }
         }
 
@@ -120,6 +130,14 @@ $footer-grid: (
                         color: $secondary;
                     }
                 }
+            }
+        }
+
+        &_map {
+
+            &_svg {
+                stroke-width: 0.07rem;
+                stroke: $fourth;
             }
         }
     }
@@ -481,6 +499,38 @@ $footer-grid: (
             }
         }
     }
+}
+
+#Samara {
+    fill: rgb(230, 86, 69);
+}
+
+#Ufa {
+    fill: rgb(189, 139, 198);
+}
+
+#Kazan {
+    fill: #38aa6e;
+}
+
+#Orenburg {
+    fill: #ffdc00;
+}
+
+#Ulyanovsk {
+    fill: #e84cd8;
+}
+
+#Saratov {
+    fill: #fbb03b;
+}
+
+#Penza {
+    fill: #4b9bd0;
+}
+
+#Saransk {
+    fill: #9996ff;
 }
 
 /*=====  End of Footer  ======*/

@@ -1,7 +1,8 @@
 'use strict';
 
 function preloaderBeginLoad() {
-	const wrapperBegin = document.querySelector('.wrapper-begin'),
+	const
+		wrapperBegin = document.querySelector('.wrapper-begin'),
 		countersBlock = document.querySelector('.section-top__info_counters'),
 		bodyBlock = document.body
 	;
