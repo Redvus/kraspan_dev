@@ -138,6 +138,11 @@ $footer-grid: (
             &_svg {
                 stroke-width: 0.07rem;
                 stroke: $fourth;
+                cursor: pointer;
+
+                &--hidden {
+                    opacity: 0.5;
+                }
             }
         }
     }
@@ -501,36 +506,40 @@ $footer-grid: (
     }
 }
 
-#Samara {
-    fill: rgb(230, 86, 69);
-}
+#footerMap {
 
-#Ufa {
-    fill: rgb(189, 139, 198);
-}
+    &Samara {
+        fill: rgb(230, 86, 69);
+    }
 
-#Kazan {
-    fill: #38aa6e;
-}
+    &Ufa {
+        fill: rgb(184, 120, 196);
+    }
 
-#Orenburg {
-    fill: #ffdc00;
-}
+    &Kazan {
+        fill: #38aa6e;
+    }
 
-#Ulyanovsk {
-    fill: #e84cd8;
-}
+    &Orenburg {
+        fill: #ffdc00;
+    }
 
-#Saratov {
-    fill: #fbb03b;
-}
+    &Ulyanovsk {
+        fill: #c964a5;
+    }
 
-#Penza {
-    fill: #4b9bd0;
-}
+    &Saratov {
+        fill: #fbb03b;
+    }
 
-#Saransk {
-    fill: #9996ff;
+    &Penza {
+        fill: #4b9bd0;
+    }
+
+    &Saransk {
+        fill: #9996ff;
+    }
+
 }
 
 /*=====  End of Footer  ======*/
