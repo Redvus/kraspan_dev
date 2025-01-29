@@ -76,11 +76,11 @@ $footer-grid: (
             }
 
             &--left {
-                width: calc(((50% / 2) - (#{$padding} * 5)));
+                width: calc((30% - (#{$padding} * 5)));
                 padding: calc(#{$padding} * 3) calc(#{$padding} * 5) 0 0 ;
 
                 picture {
-                    width: 70%;
+                    width: 60%;
                 }
             }
 
@@ -90,9 +90,29 @@ $footer-grid: (
             }
 
             &--wide {
-                width: calc((((50% / 2) * 3)));
+                width: 70%;
                 padding: calc(#{$padding} * 3) 0 0;
                 justify-content: flex-end;
+
+                #kraspanPovMapCity {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 100;
+                    user-select: none;
+                }
+            }
+
+            &_description {
+                display: block;
+                position: relative;
+                font-family: $primary-font !important;
+                font-size: $font-size-small !important;
+                text-align: right !important;
+                margin-top: 1rem;
             }
         }
 
@@ -142,6 +162,10 @@ $footer-grid: (
 
                 &--hidden {
                     opacity: 0.5;
+                }
+
+                &_text {
+                    fill: $primary;
                 }
             }
         }
