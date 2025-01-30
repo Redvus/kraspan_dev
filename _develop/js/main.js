@@ -20,7 +20,9 @@ function countersFront() {
 const
     wrapper = document.querySelector('.wrapper'),
     headerMob = document.querySelector('.header'),
-    // headerDesktop = document.querySelector('.header'),
+    headerTop = document.querySelector('.header__top'),
+    headerTopMobile = document.querySelector('.header__top_mobile'),
+    headerBottom = document.querySelector('.header__bottom'),
     headerTopPart = document.querySelector('.header__top_part'),
     headerTopAdress = document.querySelector('.header__top_adress'),
     headerTopPartRight = document.querySelector('.header__top_part--right'),
@@ -31,12 +33,13 @@ const
 function wrapperMob() {
     wrapper.classList = 'wrapper wrapper--mobile';
     headerMob.classList = 'header header--mobile';
-    headerTopPart.removeChild(headerTopAdress);
+    headerMob.removeChild(headerTop);
+    headerMob.removeChild(headerBottom);
 }
 
 function wrapperDesk() {
-    headerTopPart.removeChild(headerTopAdressMobile);
     // headerTopPart.removeChild(headerTopAdressMobile);
+    headerMob.removeChild(headerTopMobile);
 }
 
 function initMain() {
@@ -47,9 +50,9 @@ function initMain() {
     if (typeof objectsTab) {
         objectsTabs();
     }
-    // if (typeof sliderFront) {
-    //     frontSlider();
-    // }
+    if (typeof sliderFront) {
+        frontSlider();
+    }
 
     // if (sectionMaterials) {
     //     const modalLoadNew = new Modal();
@@ -73,6 +76,7 @@ function initMain() {
     //     modalLoadNew.modalLoad('materialLink_9', 'kraspangranite/granit-info/');
     //     modalLoadNew.modalLoad('materialLink_10', 'kraspantunnelcolor/kraspantunnelcolor-info/');
     // }
+    wrapperDesk();
 }
 
 function initMainMobile() {
@@ -80,7 +84,7 @@ function initMainMobile() {
         objectsTabs();
     }
     if (typeof sliderFront) {
-        // frontSlider();
+        frontSlider();
     }
     wrapperMob();
 }

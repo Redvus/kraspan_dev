@@ -38,7 +38,7 @@ $headerLineHeight: calc(#{$padding} / 3);
 $headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight});
 
 $headerLogoWidth: 18rem;
-$headerInfoWidth: 25%;
+$headerInfoWidth: calc(80% / 3);
 $headerMenuPadding: 5rem;
 $headingPartPadding: calc(#{$padding} * 4);
 
@@ -284,9 +284,9 @@ ul {
 
     li {
 
-        @include grid-media($XLarge) {
-            font-size: $font-size-base;
-        }
+        // @include grid-media($XLarge) {
+        //     font-size: $font-size-base;
+        // }
 
         @include grid-media($Medium) {
             font-size: $font-size-base;
