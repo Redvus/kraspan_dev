@@ -13,6 +13,10 @@ class MapSelect {
 		this.mapSelectPenza = document.getElementById('footerMapPenza');
 		this.mapSelectKazan = document.getElementById('footerMapKazan');
 
+		this.footerMapUfa = document.getElementById('footerMapUfa');
+		this.footerMapUfa.style.userSelect = 'none';
+		this.footerMapUfa.style.pointerEvents = 'none';
+
 		this.mapSelectCitySamara = document.getElementById('citySamara');
 		this.mapSelectCitySamara.style.userSelect = 'none';
 		this.mapSelectCitySamara.style.pointerEvents = 'none';

@@ -163,9 +163,13 @@ $footer-grid: (
                 &--hidden {
                     opacity: 0.5;
                 }
+            }
 
-                &_text {
-                    fill: $primary;
+            &_text {
+                fill: $primary;
+
+                tspan {
+                    font-family: $heading-font-light;
                 }
             }
         }
@@ -537,7 +541,8 @@ $footer-grid: (
     }
 
     &Ufa {
-        fill: rgb(184, 120, 196);
+        // fill: rgb(184, 120, 196);
+        fill: lighten($primary, 50%);
     }
 
     &Kazan {

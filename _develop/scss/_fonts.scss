@@ -15,8 +15,9 @@
 
 @font-face {
 	font-family: "Montserrat Regular";
-	src: local("fonts/"),
-	url("fonts/Montserrat-Regular.woff") format("woff");
+	src: local("../fonts/"),
+	url("fonts/Montserrat-Regular.woff") format("woff"),
+	url("fonts/Montserrat-Regular.woff2") format("woff2");
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
@@ -25,7 +26,8 @@
 @font-face {
 	font-family: "Montserrat Medium";
 	src: local("fonts/"),
-	url("fonts/Montserrat-Medium.woff") format("woff");
+	url("fonts/Montserrat-Medium.woff") format("woff"),
+	url("fonts/Montserrat-Medium.woff2") format("woff2");
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
@@ -34,7 +36,8 @@
 @font-face {
 	font-family: "Montserrat Bold";
 	src: local("fonts/"),
-	url("fonts/Montserrat-Bold.woff") format("woff");
+	url("fonts/Montserrat-Bold.woff") format("woff"),
+	url("fonts/Montserrat-Bold.woff2") format("woff2");
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
@@ -42,7 +45,7 @@
 
 $fa-font-path: 'fonts/';
 
-//$primary-font: $font-stack-helvetica;
+// $primary-font: $font-stack-helvetica;
 // $primary-font: $font-stack-verdana;
 $primary-font: "Montserrat Regular";
 $heading-font: "Montserrat Bold";
