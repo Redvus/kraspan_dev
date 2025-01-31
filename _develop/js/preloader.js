@@ -13,7 +13,9 @@ function preloaderBeginLoad() {
 				onComplete: () => {
 					bodyBlock.removeChild(wrapperBegin);
 					if (countersBlock) {
-						countersFront();
+						counterLoad('counterFasad', 180);
+						counterLoad('counterObjects', 150);
+						counterLoad('counterDistrict', 9);
 					}
 				}
 			});
@@ -26,10 +28,20 @@ function preloaderBeginLoad() {
 				})
 			;
 		}, false);
-
 	}
 
 	preloaderBeginAnim();
+}
+
+function counterLoad(counterID, counterNumEnd) {
+	let upto = 0;
+	const counts = setInterval(() => {
+		const count = document.getElementById(counterID);
+		count.innerHTML = ++upto;
+		if (upto === counterNumEnd) {
+			clearInterval(counts);
+		}
+	});
 }
 
 function initMain() {
