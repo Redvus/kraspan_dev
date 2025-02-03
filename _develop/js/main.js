@@ -34,26 +34,10 @@ function wrapperDesk() {
 }
 
 function initMain() {
-    // if (typeof wrapperMain) {
-    //     scrollSmooth();
-    // }
-
-    if (typeof objectsTab) {
-        objectsTabs();
-    }
-    if (typeof sliderFront) {
-        frontSlider();
-    }
     wrapperDesk();
 }
 
 function initMainMobile() {
-    if (typeof objectsTab) {
-        objectsTabs();
-    }
-    if (typeof sliderFront) {
-        frontSlider();
-    }
     wrapperMob();
 }
 

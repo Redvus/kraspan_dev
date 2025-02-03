@@ -12,10 +12,11 @@ class MapSelect {
 		this.mapSelectSamara = document.getElementById('footerMapSamara');
 		this.mapSelectPenza = document.getElementById('footerMapPenza');
 		this.mapSelectKazan = document.getElementById('footerMapKazan');
+		this.mapSelectUfa = document.getElementById('footerMapUfa');
 
-		this.footerMapUfa = document.getElementById('footerMapUfa');
-		this.footerMapUfa.style.userSelect = 'none';
-		this.footerMapUfa.style.pointerEvents = 'none';
+		// this.footerMapUfa = document.getElementById('footerMapUfa');
+		// this.footerMapUfa.style.userSelect = 'none';
+		// this.footerMapUfa.style.pointerEvents = 'none';
 
 		this.mapSelectCitySamara = document.getElementById('citySamara');
 		this.mapSelectCitySamara.style.userSelect = 'none';
@@ -87,6 +88,10 @@ class MapSelect {
 						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:aigul.archihub@gmail.com">aigul.archihub@gmail.com</a></li>
 						<li>Республика&nbsp;Татарстан<br>г.&nbsp;Казань<br>ООО&nbsp;"АРХИХАБ"<br>ул.&nbsp;Николая&nbsp;Столбова<br>дом&nbsp;1/3,&nbsp;офис&nbsp;1014</li>
 					`;
+
+				} else if (this.mapSelectDistrict[i] == this.mapSelectUfa) {
+					this.footerAdress.innerHTML = '';
+
 				} else if (this.mapSelectDistrict[i] != this.mapSelectPenza || this.mapSelectDistrict[i] != this.mapSelectKazan) {
 					this.footerAdress.innerHTML = `
 						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(800)&nbsp;101-88-95</a></li>
@@ -96,21 +101,21 @@ class MapSelect {
 				}
 			});
 
-			// this.mapSelectDistrict[i].addEventListener('mouseleave', () => {
-			// 	if (this.mapSelectDistrict[i] != this.mapSelectPenza || this.mapSelectDistrict[i] != this.mapSelectKazan) {
-			// 		this.footerAdress.innerHTML = `
-			// 			<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(800)&nbsp;101-88-95</a></li>
-			// 			<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:fasad-pov@mail.ru">fasad-pov@mail.ru</a></li>
-			// 			<li>г.&nbsp;Самара, ул.&nbsp;Парижской Коммуны, д.&nbsp;3-А, оф.&nbsp;49</li>
-			// 		`;
-			// 	} else if (this.mapSelectDistrict[i] == this.mapSelectPenza || this.mapSelectDistrict[i] != this.mapSelectKazan) {
-			// 		this.footerAdress.innerHTML = `
-			// 			<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(800)&nbsp;101-88-95</a></li>
-			// 			<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:fasad-pov@mail.ru">fasad-pov@mail.ru</a></li>
-			// 			<li>г.&nbsp;Самара, ул.&nbsp;Парижской Коммуны, д.&nbsp;3-А, оф.&nbsp;49</li>
-			// 		`;
-			// 	}
-			// });
+			this.mapSelectDistrict[i].addEventListener('mouseleave', () => {
+				if (this.mapSelectDistrict[i] != this.mapSelectPenza || this.mapSelectDistrict[i] != this.mapSelectKazan) {
+					this.footerAdress.innerHTML = `
+						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(800)&nbsp;101-88-95</a></li>
+						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:fasad-pov@mail.ru">fasad-pov@mail.ru</a></li>
+						<li>г.&nbsp;Самара, ул.&nbsp;Парижской Коммуны, д.&nbsp;3-А, оф.&nbsp;49</li>
+					`;
+				} else if (this.mapSelectDistrict[i] == this.mapSelectPenza || this.mapSelectDistrict[i] != this.mapSelectKazan) {
+					this.footerAdress.innerHTML = `
+						<li><i class="fas fa-phone"></i>&nbsp;&nbsp;<a href="tel:88001018895">8&nbsp;(800)&nbsp;101-88-95</a></li>
+						<li><i class="fas fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:fasad-pov@mail.ru">fasad-pov@mail.ru</a></li>
+						<li>г.&nbsp;Самара, ул.&nbsp;Парижской Коммуны, д.&nbsp;3-А, оф.&nbsp;49</li>
+					`;
+				}
+			});
 		}
 	}
 }
