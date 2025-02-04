@@ -18,7 +18,9 @@ var path = {
     },
     dest: {
         css: 'root/html/assets/',
-        js: 'root/html/assets/js/'
+        cssBuild: '_build/css/',
+        js: 'root/html/assets/js/',
+        jsBuild: '_build/js/'
     },
     watch: {
         scss: '_develop/scss/',
@@ -44,7 +46,8 @@ gulp.task('main-scss', function(){
             return mapFilePath.replace('.scss', '.map');
         }
     }))
-    .pipe(gulp.dest(path.dest.css));
+    .pipe(gulp.dest(path.dest.css))
+    .pipe(gulp.dest(path.dest.cssBuild));
     // .pipe(browserSync.reload({
     //     stream: true
     // }));
@@ -83,7 +86,8 @@ gulp.task('main-js', function(){
     .pipe(concat('main.js'))
     .pipe(terser())
     .pipe(rename({suffix: "-min"}))
-    .pipe(gulp.dest(path.dest.js));
+    .pipe(gulp.dest(path.dest.js))
+    .pipe(gulp.dest(path.dest.jsBuild));
 });
 
 gulp.task('contact-js', function () {
